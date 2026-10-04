@@ -9,6 +9,7 @@ import com.hamzi.legacytoboot.member.model.dto.LoginDto;
 import com.hamzi.legacytoboot.member.model.dto.MemberDto;
 import com.hamzi.legacytoboot.member.model.vo.Member;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -36,14 +37,16 @@ public class MemberService {
 		return userInfo;
 	}
 
-	public void update(MemberDto member, String userId) {
+	public void update(MemberDto member, String userId, HttpSession httpSession) {
 		vaildateUserId(member, userId);
+		validateHttpSession(httpSession, userId);
 		vaildateUpdateRequest(member);
 		memberMapper.update(member);
 	}
 	
-	public void delete(String userPwd, String userId) {
+	public void delete(String userPwd, String userId, HttpSession httpSession) {
 		Member userInfo = vaildateUser(userId);
+		validateHttpSession(httpSession, userId);
 		vaildatePassword(userPwd, userInfo.getUserPwd());
 		memberMapper.delete(userId);
 	}
@@ -55,6 +58,13 @@ public class MemberService {
 	
 	private void vaildateUserId(MemberDto member, String userId) {
 		if(!userId.equals(member.getUserId())) {
+			throw new NotFoundException("올바르지 않은 요청입니다.");
+		}
+	}
+	
+	private void validateHttpSession(HttpSession httpSession, String userId) {
+		Member userInfo = (Member) httpSession.getAttribute("userInfo");
+		if(!userId.equals(userInfo.getUserId())) {
 			throw new NotFoundException("올바르지 않은 요청입니다.");
 		}
 	}
@@ -93,5 +103,6 @@ public class MemberService {
 			throw new NotFoundException("이미 존재하는 아이디 입니다.");
 		}
 	}
+
 
 }

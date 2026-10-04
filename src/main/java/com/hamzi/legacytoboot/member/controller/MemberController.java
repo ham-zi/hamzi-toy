@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hamzi.legacytoboot.member.model.dto.LoginDto;
@@ -37,6 +38,7 @@ public class MemberController {
 	@PostMapping("login")
 	public ModelAndView login(LoginDto loginInfo, HttpSession httpSession, ModelAndView mv) {
 		Member userInfo = memberService.login(loginInfo);
+		log.info("userInfo:{}",userInfo);
 		if(userInfo != null) {
 			httpSession.setAttribute("userInfo", userInfo);
 			mv.setViewName("redirect:/");
@@ -52,9 +54,18 @@ public class MemberController {
 	}
 	
 	@PostMapping("members/{userId}")
-	public String update(MemberDto member, @PathVariable(name="userId") String userId) {
-		memberService.update(member, userId);
+	public String update(MemberDto member, @PathVariable(name="userId") String userId, HttpSession session) {
+		memberService.update(member, userId, session);
 		return "redirct:/mypage";
+	}
+	
+	@PostMapping("members/{userId}/delete")
+	public String delete(@RequestParam(value="userPwd") String userPwd, @PathVariable(value="userId") String userId, HttpSession session) {
+		
+		memberService.delete(userPwd, userId, session);
+		
+		
+		return "redirect:/";
 	}
 	
 }
