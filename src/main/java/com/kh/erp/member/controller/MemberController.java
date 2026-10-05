@@ -36,18 +36,21 @@ public class MemberController {
 	}
 	
 	@PostMapping("login")
-	public ModelAndView login(LoginDto loginInfo, HttpSession httpSession, ModelAndView mv) {
+	public ModelAndView login(LoginDto loginInfo, HttpSession httpSession, ModelAndView mv) {	
 		Member userInfo = memberService.login(loginInfo);
-		log.info("userInfo:{}",userInfo);
 		if(userInfo != null) {
-			System.out.println("@@@@@@@@@2");
 			httpSession.setAttribute("userInfo", userInfo);
 			mv.setViewName("redirect:/");
 		} else {
-			System.out.println("@@@@@@@@@@@@@@@@@@@33");
 			mv.addObject("message", "로그인 실패").setViewName("include/error_page");
 		}
 		return mv;
+	}
+	
+	@GetMapping("logout")
+	public String logout(HttpSession httpSession) {
+		httpSession.invalidate();
+		return "index";
 	}
 	
 	@GetMapping("mypage")
