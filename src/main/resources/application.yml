@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: legacy-to-boot
+    name: kh-erp
 
   datasource:
     url: jdbc:oracle:thin:@localhost:1521/FREEPDB1

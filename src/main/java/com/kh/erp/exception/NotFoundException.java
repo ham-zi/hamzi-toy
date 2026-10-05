@@ -1,4 +1,4 @@
-package com.hamzi.legacytoboot.exception;
+package com.kh.erp.exception;
 
 public class NotFoundException extends RuntimeException{
 	public NotFoundException(String message) {

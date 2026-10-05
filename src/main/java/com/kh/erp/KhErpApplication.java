@@ -1,13 +1,13 @@
-package com.hamzi.legacytoboot;
+package com.kh.erp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LegacyToBootApplication {
+public class KhErpApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LegacyToBootApplication.class, args);
+		SpringApplication.run(KhErpApplication.class, args);
 	}
 
 }

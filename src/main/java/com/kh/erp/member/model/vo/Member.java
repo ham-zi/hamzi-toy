@@ -1,4 +1,4 @@
-package com.hamzi.legacytoboot.member.model.vo;
+package com.kh.erp.member.model.vo;
 
 import lombok.Builder;
 import lombok.Getter;

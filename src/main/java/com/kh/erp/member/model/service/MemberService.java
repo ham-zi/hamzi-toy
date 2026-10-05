@@ -1,13 +1,13 @@
-package com.hamzi.legacytoboot.member.model.service;
+package com.kh.erp.member.model.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.hamzi.legacytoboot.exception.NotFoundException;
-import com.hamzi.legacytoboot.member.model.dao.MemberMapper;
-import com.hamzi.legacytoboot.member.model.dto.LoginDto;
-import com.hamzi.legacytoboot.member.model.dto.MemberDto;
-import com.hamzi.legacytoboot.member.model.vo.Member;
+import com.kh.erp.exception.NotFoundException;
+import com.kh.erp.member.model.dao.MemberMapper;
+import com.kh.erp.member.model.dto.LoginDto;
+import com.kh.erp.member.model.dto.MemberDto;
+import com.kh.erp.member.model.vo.Member;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +34,7 @@ public class MemberService {
 	public Member login(LoginDto loginInfo) {
 		Member userInfo = vaildateUser(loginInfo.getUserId());
 		vaildatePassword(loginInfo.getUserPwd(), userInfo.getUserPwd());
+		System.out.println(userInfo);
 		return userInfo;
 	}
 

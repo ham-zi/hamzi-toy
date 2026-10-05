@@ -1,4 +1,4 @@
-package com.hamzi.legacytoboot.member.controller;
+package com.kh.erp.member.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.hamzi.legacytoboot.member.model.dto.LoginDto;
-import com.hamzi.legacytoboot.member.model.dto.MemberDto;
-import com.hamzi.legacytoboot.member.model.service.MemberService;
-import com.hamzi.legacytoboot.member.model.vo.Member;
+import com.kh.erp.member.model.dto.LoginDto;
+import com.kh.erp.member.model.dto.MemberDto;
+import com.kh.erp.member.model.service.MemberService;
+import com.kh.erp.member.model.vo.Member;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
@@ -40,9 +40,11 @@ public class MemberController {
 		Member userInfo = memberService.login(loginInfo);
 		log.info("userInfo:{}",userInfo);
 		if(userInfo != null) {
+			System.out.println("@@@@@@@@@2");
 			httpSession.setAttribute("userInfo", userInfo);
 			mv.setViewName("redirect:/");
 		} else {
+			System.out.println("@@@@@@@@@@@@@@@@@@@33");
 			mv.addObject("message", "로그인 실패").setViewName("include/error_page");
 		}
 		return mv;

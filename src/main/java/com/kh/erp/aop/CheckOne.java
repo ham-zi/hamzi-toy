@@ -1,4 +1,4 @@
-package com.hamzi.legacytoboot.aop;
+package com.kh.erp.aop;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

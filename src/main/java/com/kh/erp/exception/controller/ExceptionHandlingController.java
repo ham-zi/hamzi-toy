@@ -1,10 +1,10 @@
-package com.hamzi.legacytoboot.exception.controller;
+package com.kh.erp.exception.controller;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.hamzi.legacytoboot.exception.NotFoundException;
+import com.kh.erp.exception.NotFoundException;
 
 @ControllerAdvice
 public class ExceptionHandlingController {

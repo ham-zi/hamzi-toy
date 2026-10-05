@@ -1,10 +1,10 @@
-package com.hamzi.legacytoboot.aop;
+package com.kh.erp.aop;
 
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
-import com.hamzi.legacytoboot.exception.NotFoundException;
+import com.kh.erp.exception.NotFoundException;
 
 @Aspect
 @Component

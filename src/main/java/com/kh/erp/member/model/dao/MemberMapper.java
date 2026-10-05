@@ -1,10 +1,10 @@
-package com.hamzi.legacytoboot.member.model.dao;
+package com.kh.erp.member.model.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.hamzi.legacytoboot.aop.CheckOne;
-import com.hamzi.legacytoboot.member.model.dto.MemberDto;
-import com.hamzi.legacytoboot.member.model.vo.Member;
+import com.kh.erp.aop.CheckOne;
+import com.kh.erp.member.model.dto.MemberDto;
+import com.kh.erp.member.model.vo.Member;
 
 @Mapper
 public interface MemberMapper {
