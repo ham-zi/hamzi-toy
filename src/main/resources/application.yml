@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: kh-erp
+    name: hamzi-toy
 
   datasource:
     url: jdbc:oracle:thin:@localhost:1521/FREEPDB1
@@ -17,7 +17,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:/mapper/*.xml
-  type-aliases-package: com.kh.erp
+  type-aliases-package: com.hamzi.toy
   configuration:
     map-underscore-to-camel-case: true	
     

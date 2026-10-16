@@ -62,7 +62,7 @@
     <div id="header">
         <div id="header_1">
             <div id="header_1_left">
-                <img src="https://kh-academy.co.kr/resources/images/main/logo.svg" alt="">
+                <img src="https://hamzi-toy-s3.s3.ap-northeast-2.amazonaws.com/hamzi_toy_logo.png" alt="로고">
             </div>
             <div id="header_1_center"></div>
             <div id="header_1_right">
@@ -84,8 +84,8 @@
         <div id="header_2">
             <ul>
                 <li><a href="">HOME</a></li>
-                <li><a href="">공지사항</a></li>
-                <li><a href="boards">자유게시판</a></li>
+                <li><a href="/mbti">MBTI</a></li>
+                <li><a href="/boards">자유게시판</a></li>
                 <li><a href="/spring/images">사진게시판</a></li>
             </ul>
         </div>
@@ -123,4 +123,4 @@
     
     <br clear="both">
 </body>
-</html>l>
+</html>

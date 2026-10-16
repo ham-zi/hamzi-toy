@@ -11,7 +11,7 @@ import com.hamzi.toy.common.exception.NotFoundException;
 public class ResultCheckAspect {
 
 	@AfterReturning(
-			pointcut = "@annotation(com.hazmi-legacytoboot.aop.CheckOne",
+			pointcut = "@annotation(com.hazmi.toy.common.aop.CheckOne",
 			returning = "result",
 			argNames = "result"
 	)
