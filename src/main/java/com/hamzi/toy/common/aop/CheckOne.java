@@ -1,4 +1,4 @@
-package com.kh.erp.aop;
+package com.hamzi.toy.common.aop;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

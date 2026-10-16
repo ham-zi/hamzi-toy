@@ -1,13 +1,13 @@
-package com.kh.erp;
+package com.hamzi.toy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KhErpApplication {
+public class HamziToyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(KhErpApplication.class, args);
+		SpringApplication.run(HamziToyApplication.class, args);
 	}
 
 }

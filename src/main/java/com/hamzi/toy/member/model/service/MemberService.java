@@ -1,13 +1,13 @@
-package com.kh.erp.member.model.service;
+package com.hamzi.toy.member.model.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.kh.erp.exception.NotFoundException;
-import com.kh.erp.member.model.dao.MemberMapper;
-import com.kh.erp.member.model.dto.LoginDto;
-import com.kh.erp.member.model.dto.MemberDto;
-import com.kh.erp.member.model.vo.Member;
+import com.hamzi.toy.common.exception.NotFoundException;
+import com.hamzi.toy.member.model.dao.MemberMapper;
+import com.hamzi.toy.member.model.dto.LoginDto;
+import com.hamzi.toy.member.model.dto.MemberDto;
+import com.hamzi.toy.member.model.vo.Member;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.kh.erp.member.model.vo;
+package com.hamzi.toy.member.model.vo;
 
 import lombok.Builder;
 import lombok.Getter;

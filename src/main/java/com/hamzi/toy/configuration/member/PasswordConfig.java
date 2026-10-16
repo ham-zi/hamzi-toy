@@ -1,4 +1,4 @@
-package com.kh.erp.configuration;
+package com.hamzi.toy.configuration.member;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

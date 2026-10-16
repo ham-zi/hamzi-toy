@@ -1,4 +1,4 @@
-package com.kh.erp.member.controller;
+package com.hamzi.toy.member.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.kh.erp.member.model.dto.LoginDto;
-import com.kh.erp.member.model.dto.MemberDto;
-import com.kh.erp.member.model.service.MemberService;
-import com.kh.erp.member.model.vo.Member;
+import com.hamzi.toy.member.model.dto.LoginDto;
+import com.hamzi.toy.member.model.dto.MemberDto;
+import com.hamzi.toy.member.model.service.MemberService;
+import com.hamzi.toy.member.model.vo.Member;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;

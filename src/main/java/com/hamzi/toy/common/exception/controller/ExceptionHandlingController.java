@@ -1,10 +1,10 @@
-package com.kh.erp.exception.controller;
+package com.hamzi.toy.common.exception.controller;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.kh.erp.exception.NotFoundException;
+import com.hamzi.toy.common.exception.NotFoundException;
 
 @ControllerAdvice
 public class ExceptionHandlingController {

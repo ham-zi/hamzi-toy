@@ -1,10 +1,10 @@
-package com.kh.erp.aop;
+package com.hamzi.toy.common.aop;
 
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
-import com.kh.erp.exception.NotFoundException;
+import com.hamzi.toy.common.exception.NotFoundException;
 
 @Aspect
 @Component
