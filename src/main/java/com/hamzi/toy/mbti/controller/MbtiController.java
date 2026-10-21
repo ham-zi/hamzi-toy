@@ -1,12 +1,16 @@
 package com.hamzi.toy.mbti.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hamzi.toy.mbti.model.dto.MbtiResponse;
+import com.hamzi.toy.mbti.model.dto.SaveResultRequest;
 import com.hamzi.toy.mbti.model.service.MbtiService;
 
 import jakarta.servlet.http.HttpSession;
@@ -26,6 +30,20 @@ public class MbtiController {
 		session.setAttribute("questions", response.getQuestions());
 		session.setAttribute("pageInfo", response.getPageInfo());
 		mv.setViewName("mbti/mbti_page");
+		return mv;
+	}
+	
+	@PostMapping("/save")
+	@ResponseBody
+	public String saveResult(@RequestBody SaveResultRequest request, HttpSession session, ModelAndView mv) {
+		session.setAttribute("result"+ request.getPage(), request.getResult());
+		return "ok";
+	}
+	
+	@GetMapping("/result")
+	public ModelAndView getResult(HttpSession session, ModelAndView mv) {
+		session.setAttribute("mbti", mbtiService.getResult(session));
+		mv.setViewName("mbti/result_page");
 		return mv;
 	}
 }
