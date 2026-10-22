@@ -6,6 +6,7 @@ import com.hamzi.toy.common.page.PageInfo;
 import com.hamzi.toy.mbti.model.dao.MbtiMapper;
 import com.hamzi.toy.mbti.model.dto.MbtiResponse;
 import com.hamzi.toy.mbti.model.dto.MbtiResult;
+import com.hamzi.toy.mbti.model.vo.MbtiInfo;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -30,14 +31,18 @@ public class MbtiService {
 	}
 
 
-	public String getResult(HttpSession session) {
+	public MbtiInfo getResult(HttpSession session) {
 		PageInfo pageInfo = (PageInfo) session.getAttribute("pageInfo");
 		MbtiResult mr = new MbtiResult();
 		for(int i = pageInfo.getStartPage(); i <= pageInfo.getEndPage(); ++i) {
 			MbtiResult mbtiResult = (MbtiResult) session.getAttribute("result" + i);
 			mr.sum(mbtiResult);
 		}
-		return toMbti(mr);
+		return getMbtiInfo(toMbti(mr));
+	}
+	
+	private MbtiInfo getMbtiInfo(String mbti) {
+		return mbtiMapper.findMbtiInfo(mbti);
 	}
 	
 	private String toMbti(MbtiResult mr) {

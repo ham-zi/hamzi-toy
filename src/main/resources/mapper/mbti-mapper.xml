@@ -19,6 +19,14 @@
 		OFFSET #{offset} ROWS
 		 FETCH NEXT #{boardLimit} ROWS ONLY
 	</select>
-
+	
+	<select id="findMbtiInfo" resultType="MbtiInfo">
+		SELECT MBTI_NO
+		     , MBTI_NAME
+		     , MBTI_CONTEXT
+		     , MBTI_IMAGE_URL
+		  FROM MBTI
+		 WHERE MBTI_NAME = #{mbti}		       
+	</select>
 	
 </mapper>
